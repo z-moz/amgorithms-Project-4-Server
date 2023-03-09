@@ -85,7 +85,7 @@ CORS_ORIGIN_WHITELIST = [
   "https://waste-not-app.netlify.app"
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://waste-not-app.netlify.app/", "localhost"]
+CSRF_TRUSTED_ORIGINS = ["https://waste-not-app.netlify.app/", "http://localhost:3000"]
 
 ROOT_URLCONF = 'waste_not.urls'
 
