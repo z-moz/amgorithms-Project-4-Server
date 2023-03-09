@@ -38,7 +38,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 DEBUG = env.bool("DEBUG", default=False)
 
 
-ALLOWED_HOSTS = [".netlify.app", "localhost", "127.0.0.1", "hostname.fly.dev"] # We'll need to update this later.
+ALLOWED_HOSTS = ["waste-not-app.netlify.app", "localhost", "127.0.0.1", "hostname.fly.dev"] # We'll need to update this later.
 
 
 # Application definition
