@@ -72,10 +72,11 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
   "http://localhost:3000",
-  "http://localhost:8000"
+  "http://localhost:8000",
+  "https://waste-not-app.netlify.app"
 ]
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+CSRF_TRUSTED_ORIGINS = ["https://waste-not-app.netlify.app/", "localhost"]
 
 ROOT_URLCONF = 'waste_not.urls'
 
