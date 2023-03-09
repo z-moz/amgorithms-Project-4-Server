@@ -11,20 +11,27 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import django_on_heroku
 from pathlib import Path
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 import environ
-from environ import Env
+# from environ import Env
 import os
 import dj_database_url
 
-env = Env()
-environ.Env()
-environ.Env.read_env()
+# env = Env()
+# environ.Env()
+# environ.Env.read_env()
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False),
+    CSRF_COOKIE_SECURE=(bool, True),
+    SESSION_COOKIE_SECURE=(bool, True),   
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -33,9 +40,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env('DEBUG')
+CSRF_COOKIE_SECURE = env('CSRF_COOKIE_SECURE')
+SESSION_COOKIE_SECURE = env('SESSION_COOKIE_SECURE')
 
-
-DEBUG = env.bool("DEBUG", default=False)
+# DEBUG = env.bool("DEBUG", default=False)
 
 
 ALLOWED_HOSTS = ["https://waste-not-app.netlify.app", "localhost", "127.0.0.1"] # We'll need to update this later.
