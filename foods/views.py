@@ -151,6 +151,7 @@ class ExpiringRed(generics.ListAPIView):
 
 
 class ExpiringOrange(generics.ListAPIView):
+    print('ExpiringOrange() starting: ')
     def get_queryset(self):
         user = self.request.user
         day_today = timezone.now()
