@@ -47,7 +47,7 @@ SESSION_COOKIE_SECURE = env('SESSION_COOKIE_SECURE')
 # DEBUG = env.bool("DEBUG", default=False)
 
 
-ALLOWED_HOSTS = ["https://waste-not-app.netlify.app", "localhost", "127.0.0.1"] # We'll need to update this later.
+ALLOWED_HOSTS = ["https://celebrated-haupia-607dbd.netlify.app", "https://waste-not-app.netlify.app", "localhost", "127.0.0.1"] # We'll need to update this later.
 
 
 # Application definition
@@ -82,10 +82,11 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = [
   "http://localhost:3000",
   "http://localhost:8000",
-  "https://waste-not-app.netlify.app"
+  "https://waste-not-app.netlify.app", 
+  "https://celebrated-haupia-607dbd.netlify.app"
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://waste-not-app.netlify.app/", "http://localhost:3000"]
+CSRF_TRUSTED_ORIGINS = ["https://waste-not-app.netlify.app/", "http://localhost:3000", "https://celebrated-haupia-607dbd.netlify.app"]
 
 ROOT_URLCONF = 'waste_not.urls'
 
