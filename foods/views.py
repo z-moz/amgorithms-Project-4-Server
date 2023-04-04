@@ -160,6 +160,7 @@ class ExpiringOrange(generics.ListAPIView):
         three = day_today + timedelta(days=3)
         one_to_three = Food.objects.filter(user_id=user.id).filter(Q(wasted__isnull=True) & Q(expiry_date=one) | Q(
             expiry_date=two) | Q(expiry_date=three))
+        print('ExpiringOrange() fired')
         return one_to_three
 
     serializer_class = InventorySerializer
